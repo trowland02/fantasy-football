@@ -1,0 +1,12 @@
+fastapi==0.95.0
+pydantic==1.10.7
+uvicorn==0.21.1
+apache-libcloud==3.7.0
+python-multipart==0.0.6
+
+mysql-connector-python
+altair==4.0
+boto3==1.26.164
+python-dotenv==1.0.0
+pendulum==2.1.2
+PyYAML==6.0

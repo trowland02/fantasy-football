@@ -1,0 +1,17 @@
+FROM python:3.11-slim
+
+WORKDIR /app
+
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
+
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends gcc
+    
+RUN apt-get install -y default-mysql-client
+
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+
+COPY ./app ./app
+CMD [ "python3",  "app/app.py" ]

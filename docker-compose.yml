@@ -1,0 +1,38 @@
+version: "3.8"
+
+services:
+  db:
+    build:
+      context: ./db
+      dockerfile: Dockerfile
+    ports:
+      # <Port exposed> : <MySQL Port running inside container>
+      - '3306:3306'
+
+  dbcode:
+    build:
+      context: ./dbcode
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+

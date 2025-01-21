@@ -1,0 +1,4 @@
+python-dotenv==1.0.0
+mysql-connector-python
+boto3==1.26.164
+pendulum
