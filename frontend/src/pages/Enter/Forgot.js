@@ -75,7 +75,7 @@ export default function Home() {
               <Card.Body>
                 {error && <Alert variant="danger" style={{ fontSize: fontSize * 0.6 }}>{error}</Alert>}
                 {success && <Alert variant="success" style={{ fontSize: fontSize * 0.6 }}>Password Reset - Check email</Alert>}
-                <h2 className="text-center mb-4" style={{ fontSize: fontSize }}>Create User</h2>
+                <h2 className="text-center mb-4" style={{ fontSize: fontSize }}>Forgotten Password</h2>
                 <Form onSubmit={handleSubmit}>
                   <div>
                     <Form.Group id="useremail">
